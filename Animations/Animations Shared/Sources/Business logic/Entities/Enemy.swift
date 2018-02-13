@@ -12,4 +12,9 @@ class Enemy {
     
     let animations: [Animation]
     
+    init(initialPosition: Point, animations: [Animation]) {
+        self.initialPosition = initialPosition
+        self.animations = animations
+    }
+    
 }

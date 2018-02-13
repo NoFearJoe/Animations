@@ -70,8 +70,8 @@ extension Path {
     }
 }
 
-extension Path: Animation {
-    func action(duration: TimeInterval) -> SKAction {
+extension Path {
+    var action: SKAction {
         return SKAction.follow(cgPath,
                                asOffset: false,
                                orientToPath: false,

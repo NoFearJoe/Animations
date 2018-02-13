@@ -37,6 +37,22 @@
 		960D033C20335A1B00321BC3 /* Converters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960D033B20335A1B00321BC3 /* Converters.swift */; };
 		960D033E20335C1900321BC3 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960D033D20335C1900321BC3 /* Animations.swift */; };
 		960D034020335ED000321BC3 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960D033F20335ED000321BC3 /* Path.swift */; };
+		960D0341203378BA00321BC3 /* Converters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960D033B20335A1B00321BC3 /* Converters.swift */; };
+		960D0342203378BA00321BC3 /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960D03342033572A00321BC3 /* Typealiases.swift */; };
+		960D0343203378BA00321BC3 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960D032F2033565300321BC3 /* Size.swift */; };
+		960D0344203378BA00321BC3 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960D0331203356B200321BC3 /* Point.swift */; };
+		960D0345203378BA00321BC3 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960D033D20335C1900321BC3 /* Animations.swift */; };
+		960D0346203378BA00321BC3 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960D032B203355E500321BC3 /* Level.swift */; };
+		960D0347203378BA00321BC3 /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960D03362033584200321BC3 /* Enemy.swift */; };
+		960D0348203378BA00321BC3 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960D033F20335ED000321BC3 /* Path.swift */; };
+		960D0349203378BA00321BC3 /* Converters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960D033B20335A1B00321BC3 /* Converters.swift */; };
+		960D034A203378BA00321BC3 /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960D03342033572A00321BC3 /* Typealiases.swift */; };
+		960D034B203378BA00321BC3 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960D032F2033565300321BC3 /* Size.swift */; };
+		960D034C203378BA00321BC3 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960D0331203356B200321BC3 /* Point.swift */; };
+		960D034D203378BA00321BC3 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960D033D20335C1900321BC3 /* Animations.swift */; };
+		960D034E203378BA00321BC3 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960D032B203355E500321BC3 /* Level.swift */; };
+		960D034F203378BA00321BC3 /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960D03362033584200321BC3 /* Enemy.swift */; };
+		960D0350203378BA00321BC3 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960D033F20335ED000321BC3 /* Path.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -384,7 +400,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				960D03172033556F00321BC3 /* GameScene.swift in Sources */,
+				960D0348203378BA00321BC3 /* Path.swift in Sources */,
 				960D02FD2033556F00321BC3 /* GameViewController.swift in Sources */,
+				960D0342203378BA00321BC3 /* Typealiases.swift in Sources */,
+				960D0346203378BA00321BC3 /* Level.swift in Sources */,
+				960D0341203378BA00321BC3 /* Converters.swift in Sources */,
+				960D0344203378BA00321BC3 /* Point.swift in Sources */,
+				960D0347203378BA00321BC3 /* Enemy.swift in Sources */,
+				960D0343203378BA00321BC3 /* Size.swift in Sources */,
+				960D0345203378BA00321BC3 /* Animations.swift in Sources */,
 				960D02FB2033556F00321BC3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,7 +418,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				960D03182033556F00321BC3 /* GameScene.swift in Sources */,
+				960D0350203378BA00321BC3 /* Path.swift in Sources */,
 				960D030B2033556F00321BC3 /* GameViewController.swift in Sources */,
+				960D034A203378BA00321BC3 /* Typealiases.swift in Sources */,
+				960D034E203378BA00321BC3 /* Level.swift in Sources */,
+				960D0349203378BA00321BC3 /* Converters.swift in Sources */,
+				960D034C203378BA00321BC3 /* Point.swift in Sources */,
+				960D034F203378BA00321BC3 /* Enemy.swift in Sources */,
+				960D034B203378BA00321BC3 /* Size.swift in Sources */,
+				960D034D203378BA00321BC3 /* Animations.swift in Sources */,
 				960D03092033556F00321BC3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
