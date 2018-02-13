@@ -29,6 +29,14 @@
 		960D03192033556F00321BC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 960D02E12033556F00321BC3 /* Assets.xcassets */; };
 		960D031A2033556F00321BC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 960D02E12033556F00321BC3 /* Assets.xcassets */; };
 		960D031B2033556F00321BC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 960D02E12033556F00321BC3 /* Assets.xcassets */; };
+		960D032C203355E500321BC3 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960D032B203355E500321BC3 /* Level.swift */; };
+		960D03302033565300321BC3 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960D032F2033565300321BC3 /* Size.swift */; };
+		960D0332203356B200321BC3 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960D0331203356B200321BC3 /* Point.swift */; };
+		960D03352033572A00321BC3 /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960D03342033572A00321BC3 /* Typealiases.swift */; };
+		960D03372033584200321BC3 /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960D03362033584200321BC3 /* Enemy.swift */; };
+		960D033C20335A1B00321BC3 /* Converters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960D033B20335A1B00321BC3 /* Converters.swift */; };
+		960D033E20335C1900321BC3 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960D033D20335C1900321BC3 /* Animations.swift */; };
+		960D034020335ED000321BC3 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960D033F20335ED000321BC3 /* Path.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +60,14 @@
 		960D030A2033556F00321BC3 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		960D030D2033556F00321BC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		960D030F2033556F00321BC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		960D032B203355E500321BC3 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
+		960D032F2033565300321BC3 /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
+		960D0331203356B200321BC3 /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		960D03342033572A00321BC3 /* Typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
+		960D03362033584200321BC3 /* Enemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
+		960D033B20335A1B00321BC3 /* Converters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converters.swift; sourceTree = "<group>"; };
+		960D033D20335C1900321BC3 /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
+		960D033F20335ED000321BC3 /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +109,8 @@
 		960D02DD2033556F00321BC3 /* Animations Shared */ = {
 			isa = PBXGroup;
 			children = (
+				960D0327203355B600321BC3 /* Sources */,
+				960D0328203355BD00321BC3 /* Resources */,
 				960D02DE2033556F00321BC3 /* Actions.sks */,
 				960D02DF2033556F00321BC3 /* GameScene.sks */,
 				960D02E02033556F00321BC3 /* GameScene.swift */,
@@ -143,6 +161,68 @@
 				960D030F2033556F00321BC3 /* Info.plist */,
 			);
 			path = "Animations macOS";
+			sourceTree = "<group>";
+		};
+		960D0327203355B600321BC3 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				960D032D2033562800321BC3 /* Core */,
+				960D0329203355CC00321BC3 /* Business logic */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		960D0328203355BD00321BC3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		960D0329203355CC00321BC3 /* Business logic */ = {
+			isa = PBXGroup;
+			children = (
+				960D032A203355DA00321BC3 /* Entities */,
+			);
+			path = "Business logic";
+			sourceTree = "<group>";
+		};
+		960D032A203355DA00321BC3 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				960D032B203355E500321BC3 /* Level.swift */,
+				960D03362033584200321BC3 /* Enemy.swift */,
+				960D033F20335ED000321BC3 /* Path.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		960D032D2033562800321BC3 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				960D033A20335A0800321BC3 /* Math */,
+				960D032E2033562E00321BC3 /* Models */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		960D032E2033562E00321BC3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				960D03342033572A00321BC3 /* Typealiases.swift */,
+				960D032F2033565300321BC3 /* Size.swift */,
+				960D0331203356B200321BC3 /* Point.swift */,
+				960D033D20335C1900321BC3 /* Animations.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		960D033A20335A0800321BC3 /* Math */ = {
+			isa = PBXGroup;
+			children = (
+				960D033B20335A1B00321BC3 /* Converters.swift */,
+			);
+			path = Math;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,7 +366,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				960D03162033556F00321BC3 /* GameScene.swift in Sources */,
+				960D034020335ED000321BC3 /* Path.swift in Sources */,
+				960D03302033565300321BC3 /* Size.swift in Sources */,
+				960D03352033572A00321BC3 /* Typealiases.swift in Sources */,
+				960D0332203356B200321BC3 /* Point.swift in Sources */,
 				960D02EC2033556F00321BC3 /* GameViewController.swift in Sources */,
+				960D032C203355E500321BC3 /* Level.swift in Sources */,
+				960D033E20335C1900321BC3 /* Animations.swift in Sources */,
+				960D03372033584200321BC3 /* Enemy.swift in Sources */,
+				960D033C20335A1B00321BC3 /* Converters.swift in Sources */,
 				960D02EA2033556F00321BC3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
