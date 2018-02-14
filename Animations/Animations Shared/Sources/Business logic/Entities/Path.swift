@@ -47,8 +47,16 @@ extension Path {
         
     }
     
-    func movePoint(_ point: Point, to targetPoint: Point) {
-        
+    func updatePoint(at index: Int, point: Point) {
+        guard keyFrames.indices ~= index else { return }
+        keyFrames[index].position = point
+    }
+    
+    func index(of point: Point, size: Size) -> Int? {
+        return keyFrames.index(where: { keyFrame in
+            let frame = CGRect(x: keyFrame.position.x - size.width * 0.5, y: keyFrame.position.y - size.height * 0.5, width: size.width, height: size.height)
+            return frame.contains(point.cgPoint)
+        })
     }
     
 }

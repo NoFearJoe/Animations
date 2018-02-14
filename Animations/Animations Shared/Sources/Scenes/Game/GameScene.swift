@@ -19,6 +19,8 @@ class GameScene: SKScene {
     private let level: Level
     private let path: Path
     
+    private var draggingKeyNode: SKShapeNode?
+    
     init(level: Level) {
         self.level = level
         self.path = Path(startPosition: level.hero.initialPosition,
@@ -35,6 +37,8 @@ class GameScene: SKScene {
     }
     
     func setUpScene() {
+        physicsWorld.gravity = CGVector(dx: 0, dy: 0)
+        
         addPathNode()
         addHeroNode()
         addAnchorNodes()
@@ -64,25 +68,47 @@ extension GameScene {
         guard let touch = touches.first else { return }
         let location = touch.location(in: self)
         let point = Point(x: location.x, y: location.y)
-        path.addPoint(point)
+        
+        if let touchedNode = keyNodes.first(where: { $0.frame.contains(location) }) {
+            draggingKeyNode = touchedNode
+        } else {
+            path.addPoint(point)
+            addKeyNodes()
+            
+            if let touchedNode = keyNodes.first(where: { $0.frame.contains(location) }) {
+                draggingKeyNode = touchedNode
+            }
+        }
         
         addPathNode()
-        addKeyNodes()
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else { return }
+        let location = touch.location(in: self)
+        let point = Point(x: location.x, y: location.y)
+        
+        if let draggingKeyNode = draggingKeyNode {
+            let nodePosition = draggingKeyNode.position
+            guard let nodeIndex = path.index(of: Point(x: nodePosition.x, y: nodePosition.y), size: Size(width: 10, height: 10)) else { return }
+            path.updatePoint(at: nodeIndex, point: point)
+            draggingKeyNode.position = point.cgPoint
+            addPathNode()
+        }
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        draggingKeyNode = nil
         
         heroNode.removeAllActions()
         heroNode.run(SKAction.repeatForever(path.action))
     }
     
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-
-    }
-    
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-
+        draggingKeyNode = nil
+        
+        heroNode.removeAllActions()
+        heroNode.run(SKAction.repeatForever(path.action))
     }
     
    
@@ -158,9 +184,6 @@ private extension GameScene {
         node.position = position.cgPoint
         node.zPosition = 15
         node.fillColor = .blue
-        node.physicsBody = SKPhysicsBody(circleOfRadius: 5)
-        node.physicsBody?.collisionBitMask = 8
-        node.physicsBody?.isDynamic = false
         return node
     }
     
@@ -169,9 +192,6 @@ private extension GameScene {
         node.position = position.cgPoint
         node.zPosition = 15
         node.fillColor = .yellow
-        node.physicsBody = SKPhysicsBody(circleOfRadius: 5)
-        node.physicsBody?.collisionBitMask = 8
-        node.physicsBody?.isDynamic = false
         return node
     }
     
