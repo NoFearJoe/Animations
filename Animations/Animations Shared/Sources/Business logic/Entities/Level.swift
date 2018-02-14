@@ -8,10 +8,23 @@
 
 struct Level {
     
-    let size: Size
+    struct Geometry {
+        let size: Size
+    }
     
-    let initialPosition: Point
-    let targetPosition: Point
+    struct Hero {
+        let initialPosition: Point
+        let targetPosition: Point
+        
+        let size: Size
+        
+        /// Defines how many seconds is needed to go from initial to target position
+        let speed: Unit
+    }
+    
+    let geometry: Geometry
+    
+    let hero: Hero
     
     let enemies: [Enemy]
     

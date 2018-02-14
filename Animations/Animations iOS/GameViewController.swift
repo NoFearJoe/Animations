@@ -15,7 +15,18 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let scene = GameScene.newGameScene()
+        let geometry = Level.Geometry(size: Size(width: 500, height: 500))
+        
+        let hero = Level.Hero(initialPosition: Point(x: 100, y: 250),
+                              targetPosition: Point(x: 400, y: 250),
+                              size: Size(width: 50, height: 50),
+                              speed: 3)
+        
+        let level = Level(geometry: geometry,
+                          hero: hero,
+                          enemies: [])
+        
+        let scene = GameSceneBuilder.buildGameScene(with: level)
 
         // Present the scene
         let skView = self.view as! SKView
